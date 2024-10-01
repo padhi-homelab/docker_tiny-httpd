@@ -1,4 +1,4 @@
-FROM padhihomelab/alpine-base:3.16.2_0.19.0_0.2
+FROM padhihomelab/alpine-base:3.20.2_0.19.0_0.2
 
 COPY start-thttpd.sh \
      /usr/local/bin/start-thttpd
@@ -8,7 +8,7 @@ COPY entrypoint-scripts \
 RUN chmod +x /etc/docker-entrypoint.d/99-extra-scripts/*.sh \
              /usr/local/bin/start-thttpd \
  && apk add --no-cache --update \
-        thttpd=2.29-r1
+        thttpd=2.29-r2
 
 EXPOSE 80
 VOLUME [ "/www" ]
